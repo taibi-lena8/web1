@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>متوسطة مرخوفي حسين | البوابة الإلكترونية</title>
+  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<header class="top">
+  <div class="logo">
+    <svg class="logo-svg" viewBox="0 0 100 100">
+      <text x="50%" y="65%" text-anchor="middle" font-size="60" font-family="Segoe Script, cursive" fill="#a12c4a">M</text>
+    </svg>
+    <div class="school">
+      <h1>متوسطة مرخوفي حسين</h1>
+      <span>Merkhofi Hussein Middle School</span>
+    </div>
+  </div>
+  <div class="email-display">taibilena8@gmail.com</div>
+</header>
+
+<main class="container">
+  <section class="card final-promo-box">
+     <div class="promo-wrapper">
+        <div id="plus-btn-access" class="final-plus-btn" title="اضغط للفتح">+</div>
+        <div class="final-arrow-down">
+           <svg viewBox="0 0 50 80" width="40">
+              <path d="M25,5 L25,70 M10,55 L25,72 L40,55" fill="none" stroke="#a12c4a" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+           </svg>
+        </div>
+        <button id="open-excel-portal" class="btn-main-excel">📥 تحميل قوائم الحجز (خاص بالأساتذة)</button>
+     </div>
+  </section>
+
+  <section class="card">
+    <h2>📩 اتصل بنا | Contact Us</h2>
+    <form id="contact-form">
+      <input type="text" name="from_name" placeholder="الاسم الكامل" required>
+      <input type="email" name="reply_to" placeholder="البريد الإلكتروني" required>
+      <input type="text" name="subject" placeholder="الموضوع">
+      <textarea name="message" placeholder="رسالتك هنا..." rows="4" required></textarea>
+      <button type="submit" id="contact-btn">إرسال الرسالة</button>
+    </form>
+    <p id="contact-status" class="status-msg"></p>
+  </section>
+
+  <section class="card private-section">
+    <h2>📋 طلب الشهادة الطبية</h2>
+    <p class="warning-text">حفاظاً على خصوصية التلاميذ، يرجى ملء البيانات بدقة.</p>
+    <form id="request-form">
+      <div class="input-group">
+        <label>اسم التلميذ الكامل:</label>
+        <input type="text" name="student_name" required>
+      </div>
+      <div class="input-group">
+        <label>تاريخ ميلاد التلميذ:</label>
+        <input type="date" name="birth_date" required>
+      </div>
+      <div class="input-group">
+        <label>بريد الولي الإلكتروني:</label>
+        <input type="email" name="parent_email" required>
+      </div>
+      <button type="submit" id="request-btn">إرسال طلب الشهادة</button>
+    </form>
+    <p id="request-status" class="status-msg"></p>
+  </section>
+</main>
+
+<div id="excel-modal" class="modal-overlay">
+  <div class="modal-content">
+    <div id="auth-step">
+      <h3>🔒 كلمة المرور</h3>
+      <input type="password" id="pass-field" placeholder="أدخل كلمة المرور">
+      <div class="modal-btns">
+        <button onclick="verifyPass()">دخول</button>
+        <button onclick="closeModal()" class="btn-secondary">إلغاء</button>
+      </div>
+    </div>
+    <div id="download-step" style="display:none;">
+      <div class="warning-text" style="margin-bottom:15px;">⚠️ تأكد من إرفاق جميع التلاميذ للأفواج الفرعية.</div>
+      
+      <div class="select-wrapper">
+          <select id="teacher-select">
+            <option value="">-- اختر الأستاذ --</option>
+            <optgroup label="اللغة العربية">
+              <option value="zahi.xlsx">الزاهي فاطمة الزهرة</option>
+              <option value="maazouz.xlsx">معزوز صبيحة</option>
+              <option value="bouatrous.xlsx">بوتروس سهام</option>
+              <option value="maamri_i.xlsx">معمري اكرام</option>
+              <option value="omran.xlsx">عمران فائزة</option>
+              <option value="khalifa.xlsx">خليفة سامية</option>
+              <option value="meflah.xlsx">مفلاح أم كلثوم</option>
+              <option value="chtibi.xlsx">شطيبي نسيبة</option>
+              <option value="rouai.xlsx">رواي سندس</option>
+              <option value="raach.xlsx">رعاش سارة</option>
+            </optgroup>
+            <optgroup label="اللغة الفرنسية">
+              <option value="boukadir.xlsx">بوقادير ليلى</option>
+              <option value="rahim.xlsx">رحيم نور الهدى</option>
+              <option value="ouadi.xlsx">عوادي ايمان</option>
+              <option value="maamri_s.xlsx">معمري سوسن</option>
+              <option value="khadia.xlsx">خدية كريمة</option>
+              <option value="ben_soliman.xlsx">بن سليمان ايمان</option>
+            </optgroup>
+            <optgroup label="اللغة الإنجليزية">
+              <option value="fatni.xlsx">فتني زهرة العلاء</option>
+              <option value="boutaba.xlsx">بوطبة ليلى</option>
+              <option value="kamassi.xlsx">كماسي سعيدة</option>
+              <option value="fathallah.xlsx">فتح الله نوال</option>
+            </optgroup>
+            <optgroup label="الرياضيات">
+              <option value="lakhchine.xlsx">لخشين علي</option>
+              <option value="ben_kouider.xlsx">بن قويدر صبرينة</option>
+              <option value="ben_zid.xlsx">بن زيد فاطمة الزهرة</option>
+              <option value="ramdani.xlsx">رمضاني ام الهناء</option>
+              <option value="tahra.xlsx">طاهرة خولة</option>
+              <option value="berkibia.xlsx">بركيبية احلام</option>
+            </optgroup>
+            <optgroup label="العلوم والفيزياء">
+              <option value="ait_yousad.xlsx">ايت يسعد عبد الرزاق</option>
+              <option value="miata.xlsx">مياطة منيرة</option>
+              <option value="bouzid.xlsx">بوزيد عائشة</option>
+              <option value="boukri.xlsx">بوكري بوبكر</option>
+              <option value="barakat.xlsx">بركات سيف الدين</option>
+              <option value="maamri_f.xlsx">معمري فاطمة الزهرة</option>
+            </optgroup>
+            <optgroup label="مواد أخرى">
+              <option value="osmani.xlsx">عصماني عشورة</option>
+              <option value="said.xlsx">سعيد خلود</option>
+              <option value="bouliga.xlsx">بوليقة هاجر</option>
+              <option value="tardjman.xlsx">ترجمان علاء الدين</option>
+              <option value="djebah.xlsx">جباح مصطفى</option>
+            </optgroup>
+          </select>
+      </div>
+
+      <div class="modal-btns">
+        <button onclick="doDownload()" class="btn-success">✅ تحميل (Excel)</button>
+        <button onclick="closeModal()" class="btn-danger">إغلاق</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <p>© 2026 جميع الحقوق محفوظة لمتوسطة مرخوفي حسين</p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
