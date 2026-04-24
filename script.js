@@ -10,7 +10,7 @@ function handleForm(formId, btnId, statusId) {
         btn.disabled = true; btn.innerText = "جارٍ الإرسال...";
         emailjs.sendForm("service_i0kgqwm", "template_9ylx4wo", this)
             .then(() => { 
-                status.innerText = "✅ تم الإرسال بنجاح!"; 
+                status.innerText = "✅ تم الإرسال!"; 
                 status.style.color = "#27ae60"; 
                 form.reset(); 
             })
@@ -19,13 +19,11 @@ function handleForm(formId, btnId, statusId) {
                 status.style.color = "#c0392b"; 
             })
             .finally(() => { 
-                btn.disabled = false; 
-                btn.innerText = (formId === "contact-form") ? "إرسال الرسالة" : "إرسال طلب الشهادة"; 
+                btn.disabled = false; btn.innerText = "إرسال"; 
             });
     });
 }
 handleForm("contact-form", "contact-btn", "contact-status");
-handleForm("request-form", "request-btn", "request-status");
 
 const modal = document.getElementById('excel-modal');
 document.getElementById('open-excel-portal').onclick = () => { modal.style.display = 'flex'; };
@@ -45,6 +43,6 @@ function doDownload() {
     if(selected) {
         window.location.href = selected.value;
     } else {
-        alert("الرجاء اختيار أستاذ من القائمة");
+        alert("الرجاء اختيار أستاذ");
     }
 }
