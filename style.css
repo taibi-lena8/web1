@@ -1,0 +1,44 @@
+body { margin: 0; padding: 0; font-family: 'Segoe UI', sans-serif; background-color: #fdf6f8; direction: rtl; text-align: right; }
+.top { background: #f2c6d4; padding: 30px; text-align: center; border-bottom: 3px solid #e1a5b8; }
+.logo-svg { width: 70px; height: 70px; }
+.school h1 { color: #a12c4a; margin: 0; font-size: 24px; }
+.email-display { margin-top: 10px; font-weight: bold; color: #555; }
+
+.container { max-width: 600px; margin: 40px auto; padding: 0 20px; }
+.card { background: white; padding: 25px; border-radius: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); margin-bottom: 30px; position: relative; }
+.private-section { border: 2px solid #f2c6d4; }
+h2 { color: #a12c4a; border-bottom: 2px solid #f2c6d4; padding-bottom: 10px; margin-top: 0; }
+
+.final-promo-box { border: 2px dashed #a12c4a; text-align: center; padding: 60px 20px 30px 20px !important; }
+.promo-wrapper { position: relative; }
+.final-plus-btn { position: absolute; top: -85px; right: 15px; width: 50px; height: 50px; background: #a12c4a; color: white; border-radius: 50%; font-size: 30px; display: flex; align-items: center; justify-content: center; cursor: pointer; border: 3px solid white; box-shadow: 0 4px 8px rgba(0,0,0,0.2); z-index: 100; transition: 0.3s; }
+.final-plus-btn:hover { transform: scale(1.1); background: #7a1f37; }
+.final-arrow-down { position: absolute; top: -45px; right: 25px; animation: moveDown 1s infinite alternate; }
+@keyframes moveDown { from { transform: translateY(0); } to { transform: translateY(10px); } }
+.btn-main-excel { background: #1d6f42 !important; color: white; width: 100%; padding: 15px; border-radius: 10px; font-weight: bold; border: none; cursor: pointer; font-size: 16px; }
+
+/* إجبار القائمة المنسدلة على الظهور لأسفل */
+.select-wrapper { margin-bottom: 180px; /* ترك مساحة كافية تحت القائمة لفتحها */ }
+
+#teacher-select {
+    width: 100%; padding: 12px; margin-top: 5px; border: 2px solid #a12c4a; border-radius: 8px; 
+    font-family: inherit; font-size: 16px; background-color: #fff; cursor: pointer;
+}
+
+input, textarea { width: 100%; padding: 12px; margin-top: 5px; border: 1px solid #ddd; border-radius: 8px; box-sizing: border-box; font-family: inherit; }
+.input-group { display: flex; flex-direction: column; gap: 5px; margin-top: 15px; }
+label { font-weight: bold; font-size: 14px; color: #7a1f37; }
+
+button { background: #a12c4a; color: white; border: none; padding: 15px; border-radius: 10px; font-weight: bold; cursor: pointer; transition: 0.2s; }
+
+/* المودال - زيادة الطول لضمان المساحة */
+.modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); z-index: 1000; align-items: flex-start; /* يبدأ من الأعلى */ justify-content: center; padding-top: 50px; overflow-y: auto; }
+.modal-content { background: white; padding: 30px; border-radius: 20px; width: 90%; max-width: 450px; min-height: 400px; /* ضمان ارتفاع كافي */ position: relative; }
+.modal-btns { display: flex; gap: 10px; margin-top: 20px; }
+.btn-success { background: #27ae60; flex: 2; }
+.btn-danger { background: #c0392b; flex: 1; }
+.btn-secondary { background: #95a5a6; width: 100%; }
+
+.warning-text { font-size: 13px; color: #d63031; background: #fff0f0; padding: 12px; border-radius: 8px; text-align: center; }
+footer { background: #f2c6d4; padding: 20px; text-align: center; margin-top: 40px; }
+.status-msg { text-align: center; font-weight: bold; margin-top: 10px; }
