@@ -1,8 +1,5 @@
 (function() { emailjs.init("rI-X_67czvTjPDZjh"); })();
 
-const myServiceId = "service_i0kgqwm"; 
-const myTemplateId = "template_9ylx4wo"; 
-
 function handleForm(formId, btnId, statusId) {
     const form = document.getElementById(formId);
     if (!form) return;
@@ -11,7 +8,7 @@ function handleForm(formId, btnId, statusId) {
         const btn = document.getElementById(btnId);
         const status = document.getElementById(statusId);
         btn.disabled = true; btn.innerText = "جارٍ الإرسال...";
-        emailjs.sendForm(myServiceId, myTemplateId, this)
+        emailjs.sendForm("service_i0kgqwm", "template_9ylx4wo", this)
             .then(() => { 
                 status.innerText = "✅ تم الإرسال بنجاح!"; 
                 status.style.color = "#27ae60"; 
@@ -44,7 +41,10 @@ function verifyPass() {
 }
 
 function doDownload() {
-    const f = document.getElementById('teacher-select').value;
-    if(f) window.location.href = f;
-    else alert("الرجاء اختيار أستاذ");
+    const selected = document.querySelector('input[name="teacher"]:checked');
+    if(selected) {
+        window.location.href = selected.value;
+    } else {
+        alert("الرجاء اختيار أستاذ من القائمة");
+    }
 }
