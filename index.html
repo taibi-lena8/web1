@@ -78,66 +78,44 @@
         <button onclick="closeModal()" class="btn-secondary">إلغاء</button>
       </div>
     </div>
+    
     <div id="download-step" style="display:none;">
-      <div class="warning-text" style="margin-bottom:15px;">⚠️ تأكد من إرفاق جميع التلاميذ للأفواج الفرعية.</div>
+      <h3>📋 اختر اسمك من القائمة</h3>
+      <div class="warning-text">⚠️ تأكد من إرفاق جميع التلاميذ للأفواج الفرعية.</div>
       
-      <div class="select-wrapper">
-          <select id="teacher-select">
-            <option value="">-- اختر الأستاذ --</option>
-            <optgroup label="اللغة العربية">
-              <option value="zahi.xlsx">الزاهي فاطمة الزهرة</option>
-              <option value="maazouz.xlsx">معزوز صبيحة</option>
-              <option value="bouatrous.xlsx">بوتروس سهام</option>
-              <option value="maamri_i.xlsx">معمري اكرام</option>
-              <option value="omran.xlsx">عمران فائزة</option>
-              <option value="khalifa.xlsx">خليفة سامية</option>
-              <option value="meflah.xlsx">مفلاح أم كلثوم</option>
-              <option value="chtibi.xlsx">شطيبي نسيبة</option>
-              <option value="rouai.xlsx">رواي سندس</option>
-              <option value="raach.xlsx">رعاش سارة</option>
-            </optgroup>
-            <optgroup label="اللغة الفرنسية">
-              <option value="boukadir.xlsx">بوقادير ليلى</option>
-              <option value="rahim.xlsx">رحيم نور الهدى</option>
-              <option value="ouadi.xlsx">عوادي ايمان</option>
-              <option value="maamri_s.xlsx">معمري سوسن</option>
-              <option value="khadia.xlsx">خدية كريمة</option>
-              <option value="ben_soliman.xlsx">بن سليمان ايمان</option>
-            </optgroup>
-            <optgroup label="اللغة الإنجليزية">
-              <option value="fatni.xlsx">فتني زهرة العلاء</option>
-              <option value="boutaba.xlsx">بوطبة ليلى</option>
-              <option value="kamassi.xlsx">كماسي سعيدة</option>
-              <option value="fathallah.xlsx">فتح الله نوال</option>
-            </optgroup>
-            <optgroup label="الرياضيات">
-              <option value="lakhchine.xlsx">لخشين علي</option>
-              <option value="ben_kouider.xlsx">بن قويدر صبرينة</option>
-              <option value="ben_zid.xlsx">بن زيد فاطمة الزهرة</option>
-              <option value="ramdani.xlsx">رمضاني ام الهناء</option>
-              <option value="tahra.xlsx">طاهرة خولة</option>
-              <option value="berkibia.xlsx">بركيبية احلام</option>
-            </optgroup>
-            <optgroup label="العلوم والفيزياء">
-              <option value="ait_yousad.xlsx">ايت يسعد عبد الرزاق</option>
-              <option value="miata.xlsx">مياطة منيرة</option>
-              <option value="bouzid.xlsx">بوزيد عائشة</option>
-              <option value="boukri.xlsx">بوكري بوبكر</option>
-              <option value="barakat.xlsx">بركات سيف الدين</option>
-              <option value="maamri_f.xlsx">معمري فاطمة الزهرة</option>
-            </optgroup>
-            <optgroup label="مواد أخرى">
-              <option value="osmani.xlsx">عصماني عشورة</option>
-              <option value="said.xlsx">سعيد خلود</option>
-              <option value="bouliga.xlsx">بوليقة هاجر</option>
-              <option value="tardjman.xlsx">ترجمان علاء الدين</option>
-              <option value="djebah.xlsx">جباح مصطفى</option>
-            </optgroup>
-          </select>
+      <div class="teachers-list-container">
+          <div class="subject-group">اللغة العربية</div>
+          <label class="teacher-item"><input type="radio" name="teacher" value="zahi.xlsx"> الزاهي فاطمة الزهرة</label>
+          <label class="teacher-item"><input type="radio" name="teacher" value="maazouz.xlsx"> معزوز صبيحة</label>
+          <label class="teacher-item"><input type="radio" name="teacher" value="bouatrous.xlsx"> بوتروس سهام</label>
+          <label class="teacher-item"><input type="radio" name="teacher" value="maamri_i.xlsx"> معمري اكرام</label>
+          <label class="teacher-item"><input type="radio" name="teacher" value="omran.xlsx"> عمران فائزة</label>
+          <label class="teacher-item"><input type="radio" name="teacher" value="khalifa.xlsx"> خليفة سامية</label>
+          <label class="teacher-item"><input type="radio" name="teacher" value="meflah.xlsx"> مفلاح أم كلثوم</label>
+          <label class="teacher-item"><input type="radio" name="teacher" value="chtibi.xlsx"> شطيبي نسيبة</label>
+          <label class="teacher-item"><input type="radio" name="teacher" value="rouai.xlsx"> رواي سندس</label>
+          <label class="teacher-item"><input type="radio" name="teacher" value="raach.xlsx"> رعاش سارة</label>
+
+          <div class="subject-group">اللغة الفرنسية</div>
+          <label class="teacher-item"><input type="radio" name="teacher" value="boukadir.xlsx"> بوقادير ليلى</label>
+          <label class="teacher-item"><input type="radio" name="teacher" value="rahim.xlsx"> رحيم نور الهدى</label>
+          <label class="teacher-item"><input type="radio" name="teacher" value="ouadi.xlsx"> عوادي ايمان</label>
+          <label class="teacher-item"><input type="radio" name="teacher" value="maamri_s.xlsx"> معمري سوسن</label>
+          <label class="teacher-item"><input type="radio" name="teacher" value="khadia.xlsx"> خدية كريمة</label>
+          <label class="teacher-item"><input type="radio" name="teacher" value="ben_soliman.xlsx"> بن سليمان ايمان</label>
+
+          <div class="subject-group">مواد أخرى</div>
+          <label class="teacher-item"><input type="radio" name="teacher" value="fatni.xlsx"> فتني زهرة العلاء</label>
+          <label class="teacher-item"><input type="radio" name="teacher" value="lakhchine.xlsx"> لخشين علي</label>
+          <label class="teacher-item"><input type="radio" name="teacher" value="osmani.xlsx"> عصماني عشورة</label>
+          <label class="teacher-item"><input type="radio" name="teacher" value="said.xlsx"> سعيد خلود</label>
+          <label class="teacher-item"><input type="radio" name="teacher" value="bouliga.xlsx"> بوليقة هاجر</label>
+          <label class="teacher-item"><input type="radio" name="teacher" value="tardjman.xlsx"> ترجمان علاء الدين</label>
+          <label class="teacher-item"><input type="radio" name="teacher" value="djebah.xlsx"> جباح مصطفى</label>
       </div>
 
       <div class="modal-btns">
-        <button onclick="doDownload()" class="btn-success">✅ تحميل (Excel)</button>
+        <button onclick="doDownload()" class="btn-success">✅ تحميل الملف</button>
         <button onclick="closeModal()" class="btn-danger">إغلاق</button>
       </div>
     </div>
