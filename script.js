@@ -1,18 +1,18 @@
 (function() { emailjs.init("rI-X_67czvTjPDZjh"); })();
 
-// --- محرك العداد التنازلي لشهادة التعليم المتوسط 2026 ---
-function startBEMCountdown() {
-    const examDate = new Date("June 1, 2026 08:00:00").getTime();
+// محرك العداد التنازلي لشهادة التعليم المتوسط 2026
+function startCountdown() {
+    const targetDate = new Date("June 1, 2026 08:00:00").getTime();
     
     setInterval(() => {
         const now = new Date().getTime();
-        const difference = examDate - now;
+        const gap = targetDate - now;
 
-        if (difference > 0) {
-            const d = Math.floor(difference / (1000 * 60 * 60 * 24));
-            const h = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const m = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
-            const s = Math.floor((difference % (1000 * 60)) / 1000);
+        if (gap > 0) {
+            const d = Math.floor(gap / (1000 * 60 * 60 * 24));
+            const h = Math.floor((gap % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const m = Math.floor((gap % (1000 * 60 * 60)) / (1000 * 60));
+            const s = Math.floor((gap % (1000 * 60)) / 1000);
 
             document.getElementById("days").innerText = d;
             document.getElementById("hours").innerText = h;
@@ -21,9 +21,8 @@ function startBEMCountdown() {
         }
     }, 1000);
 }
-startBEMCountdown();
+startCountdown();
 
-// --- وظائف الموقع الأصلية ---
 const modal = document.getElementById('excel-modal');
 document.getElementById('open-excel-portal').onclick = () => { modal.style.display = 'flex'; };
 document.getElementById('plus-btn-access').onclick = () => { modal.style.display = 'flex'; };
