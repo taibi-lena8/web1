@@ -1,10 +1,27 @@
+/* --- الأكواد التي طلبتِ عدم تغييرها --- */
 body { margin: 0; padding: 0; font-family: 'Segoe UI', sans-serif; background-color: #fdf6f8; direction: rtl; text-align: right; }
-.top { background: #f2c6d4; padding: 20px; text-align: center; border-bottom: 3px solid #e1a5b8; }
+.top { background: #f2c6d4; padding: 20px; text-align: center; border-bottom: 3px solid #e1a5b8; position: relative; }
 
-/* ضبط حجم الشعار */
+/* تنسيق العداد التنازلي الجديد (صغير ولا يفسد التصميم) */
+.bem-countdown-box {
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.3);
+  padding: 8px;
+  border-radius: 12px;
+  border: 1px solid rgba(161, 44, 74, 0.2);
+  text-align: center;
+}
+.cd-label { font-size: 10px; font-weight: bold; color: #a12c4a; margin-bottom: 4px; }
+.timer-display { display: flex; gap: 5px; }
+.t-unit { background: white; padding: 4px; border-radius: 6px; min-width: 32px; border: 1px solid #eee; }
+.t-unit span { display: block; font-size: 15px; font-weight: bold; color: #a12c4a; }
+.t-unit small { font-size: 8px; color: #777; display: block; }
+
 .logo { display: flex; flex-direction: column; align-items: center; gap: 5px; }
 .logo-svg { width: 60px; height: 60px; }
-
 .school h1 { color: #a12c4a; margin: 0; font-size: 22px; }
 .email-display { margin-top: 5px; font-weight: bold; color: #555; font-size: 14px; }
 
@@ -18,7 +35,6 @@ body { margin: 0; padding: 0; font-family: 'Segoe UI', sans-serif; background-co
 
 .btn-main-excel { background: #1d6f42 !important; color: white; width: 100%; padding: 15px; border-radius: 10px; font-weight: bold; border: none; cursor: pointer; }
 
-/* قائمة الأساتذة داخل المودال */
 .teachers-list-container {
     max-height: 320px;
     overflow-y: auto;
@@ -33,7 +49,6 @@ body { margin: 0; padding: 0; font-family: 'Segoe UI', sans-serif; background-co
 .teacher-item:hover { background: #fff0f5; }
 .teacher-item input { margin-left: 10px; }
 
-/* المودال */
 .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.85); z-index: 1000; align-items: center; justify-content: center; }
 .modal-content { background: white; padding: 25px; border-radius: 20px; width: 90%; max-width: 450px; }
 
