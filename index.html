@@ -35,12 +35,14 @@
 <main class="container">
   <section class="card final-promo-box">
      <div class="promo-wrapper">
-        <div id="plus-btn-access" class="final-plus-btn">+</div>
+        <div id="plus-btn-access" class="final-plus-btn" title="دخول سريع">+</div>
+        
         <div class="final-arrow-down">
            <svg viewBox="0 0 50 80" width="40">
               <path d="M25,5 L25,70 M10,55 L25,72 L40,55" fill="none" stroke="#a12c4a" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
            </svg>
         </div>
+        
         <button id="open-excel-portal" class="btn-main-excel">📥 تحميل قوائم الحجز (خاص بالأساتذة)</button>
      </div>
   </section>
@@ -59,11 +61,12 @@
 
 <div id="excel-modal" class="modal-overlay">
   <div class="modal-content">
+    
     <div id="auth-step">
       <h3>🔒 كلمة المرور</h3>
       <input type="password" id="pass-field" placeholder="أدخل كلمة المرور">
       <div class="modal-btns">
-        <button onclick="verifyPass()">دخول</button>
+        <button onclick="verifyPass()" class="btn-success">دخول</button>
         <button onclick="closeModal()" class="btn-secondary">إلغاء</button>
       </div>
     </div>
@@ -130,6 +133,7 @@
 </div>
 
 <footer><p>© 2026 متوسطة مرخوفي حسين</p></footer>
+
 <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
 <script src="script.js"></script>
 </body>
