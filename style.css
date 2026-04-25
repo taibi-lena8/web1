@@ -1,5 +1,5 @@
 /* ============================================================
-   1. التنسيقات العامة للصحفة (Original)
+   1. التنسيقات العامة (الحاسوب والهاتف)
    ============================================================ */
 body {
     margin: 0;
@@ -18,356 +18,128 @@ body {
     text-align: center;
     border-bottom: 3px solid #e1a5b8;
     position: relative;
-    z-index: 100;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100px;
 }
 
-/* العداد التنازلي (تصميم الحاسب افتراضياً) */
+/* العداد التنازلي - وضعية الحاسوب (على اليسار) */
 .bem-countdown-box {
     position: absolute;
-    left: 15px;
+    left: 20px;
     top: 50%;
     transform: translateY(-50%);
-    background: rgba(255, 255, 255, 0.3);
-    padding: 8px;
+    background: rgba(255, 255, 255, 0.4);
+    padding: 10px;
     border-radius: 12px;
     border: 1px solid rgba(161, 44, 74, 0.2);
     text-align: center;
-    z-index: 101;
+    z-index: 10;
 }
 
-.cd-label {
-    font-size: 10px;
-    font-weight: bold;
-    color: #a12c4a;
-    margin-bottom: 4px;
-}
+.cd-label { font-size: 10px; font-weight: bold; color: #a12c4a; margin-bottom: 4px; }
+.timer-display { display: flex; gap: 5px; justify-content: center; }
+.t-unit { background: white; padding: 4px; border-radius: 6px; min-width: 35px; border: 1px solid #eee; }
+.t-unit span { display: block; font-size: 16px; font-weight: bold; color: #a12c4a; }
+.t-unit small { font-size: 9px; color: #777; display: block; }
 
-.timer-display {
-    display: flex;
-    gap: 5px;
-    justify-content: center;
-}
-
-.t-unit {
-    background: white;
-    padding: 4px;
-    border-radius: 6px;
-    min-width: 32px;
-    border: 1px solid #eee;
-}
-
-.t-unit span {
-    display: block;
-    font-size: 15px;
-    font-weight: bold;
-    color: #a12c4a;
-}
-
-.t-unit small {
-    font-size: 8px;
-    color: #777;
-    display: block;
-}
-
-/* الشعار وعنوان المؤسسة */
+/* منطقة الشعار والاسم */
 .logo {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 5px;
 }
-
-.logo-svg {
-    width: 60px;
-    height: 60px;
-}
-
-.school h1 {
-    color: #a12c4a;
-    margin: 0;
-    font-size: 22px;
-}
-
-.school span {
-    color: #555;
-    font-size: 14px;
-    direction: ltr;
-    display: block;
-}
-
-.email-display {
-    margin-top: 5px;
-    font-weight: bold;
-    color: #555;
-    font-size: 14px;
-}
-
-/* الحاوية الرئيسية */
-.container {
-    max-width: 600px;
-    margin: 30px auto;
-    padding: 0 20px;
-}
-
-/* الكروت (Sections) */
-.card {
-    background: white;
-    padding: 25px;
-    border-radius: 20px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-    margin-bottom: 30px;
-    position: relative;
-    /* transition: transform 0.3s ease; تم إزالتها لعدم التأثير على التصميم العام */
-}
-
-/* صندوق الترويج النهائي */
-.final-promo-box {
-    border: 2px dashed #a12c4a;
-    text-align: center;
-    padding: 60px 20px 30px 20px !important;
-}
-
-/* الزر العائم (+) */
-.final-plus-btn {
-    position: absolute;
-    top: -85px;
-    right: 15px;
-    width: 50px;
-    height: 50px;
-    background: #a12c4a;
-    color: white;
-    border-radius: 50%;
-    font-size: 30px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    border: 3px solid white;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-    z-index: 102;
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* حركة أنعم */
-}
-
-/* السهم المتحرك للأعلى/الأسفل */
-.final-arrow-down {
-    position: absolute;
-    top: -45px;
-    right: 25px;
-    animation: moveDown 1s infinite alternate;
-}
-
-@keyframes moveDown {
-    from { transform: translateY(0); }
-    to { transform: translateY(10px); }
-}
-
-/* قائمة الأساتذة في المودال */
-.teachers-list-container {
-    max-height: 320px;
-    overflow-y: auto;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    padding: 10px;
-    margin: 15px 0;
-    background: #fafafa;
-}
-
-.subject-group {
-    background: #f2c6d4;
-    color: #a12c4a;
-    padding: 8px;
-    font-weight: bold;
-    margin-top: 15px;
-    border-radius: 5px;
-    font-size: 14px;
-}
-
-.teacher-item {
-    display: block;
-    padding: 12px;
-    border-bottom: 1px solid #eee;
-    cursor: pointer;
-    font-size: 15px;
-    transition: background 0.2s;
-}
-
-.teacher-item:hover {
-    background: #fff0f5;
-}
-
-/* المودال (النافذة المنبثقة) */
-.modal-overlay {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0,0,0,0.8);
-    z-index: 1000;
-    align-items: center;
-    justify-content: center;
-    backdrop-filter: blur(4px); /* تعتيم الخلفية */
-}
-
-.modal-content {
-    background: white;
-    padding: 25px;
-    border-radius: 20px;
-    width: 90%;
-    max-width: 450px;
-    animation: modalIn 0.4s ease-out; /* حركة دخول */
-}
-
-@keyframes modalIn {
-    from { opacity: 0; transform: translateY(30px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-.modal-btns {
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    gap: 10px;
-    margin-top: 15px;
-}
-
-/* تذييل الصفحة */
-footer {
-    background: #f2c6d4;
-    padding: 20px;
-    text-align: center;
-}
+.logo-svg { width: 60px; height: 60px; }
+.school h1 { color: #a12c4a; margin: 0; font-size: 24px; }
+.school span { color: #555; font-size: 14px; direction: ltr; display: block; }
+.email-display { margin-top: 5px; font-weight: bold; color: #555; font-size: 14px; text-align: center; width: 100%; display: block; }
 
 /* ============================================================
-   2. المؤثرات التفاعلية للأزرار والحقول (Enhanced Elements)
+   2. الحاوية والعناصر التفاعلية (Buttons & Cards)
    ============================================================ */
+.container { max-width: 600px; margin: 30px auto; padding: 0 20px; }
+.card { background: white; padding: 25px; border-radius: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); margin-bottom: 30px; position: relative; }
 
-/* تأثير عام لجعل أي تحرك ناعماً */
-button, .btn-main-excel, .final-plus-btn, input, textarea, .teacher-item {
+.final-promo-box { border: 2px dashed #a12c4a; text-align: center; padding: 60px 20px 30px 20px !important; }
+
+/* زر الزائد (+) مع حركة الدوران */
+.final-plus-btn {
+    position: absolute; top: -85px; right: 15px; width: 50px; height: 50px;
+    background: #a12c4a; color: white; border-radius: 50%; font-size: 30px;
+    display: flex; align-items: center; justify-content: center; cursor: pointer;
+    border: 3px solid white; box-shadow: 0 4px 8px rgba(0,0,0,0.2); z-index: 100;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.final-plus-btn:hover { transform: scale(1.1) rotate(90deg); background: #82223a; }
+
+.final-arrow-down { position: absolute; top: -45px; right: 25px; animation: moveDown 1s infinite alternate; }
+@keyframes moveDown { from { transform: translateY(0); } to { transform: translateY(10px); } }
+
+/* زر التحميل الأخضر */
+.btn-main-excel {
+    background: #1d6f42 !important; color: white; width: 100%; padding: 15px;
+    border-radius: 10px; font-weight: bold; border: none; cursor: pointer;
     transition: all 0.3s ease;
 }
+.btn-main-excel:hover { background: #145a32 !important; transform: translateY(-3px); box-shadow: 0 5px 15px rgba(29, 111, 66, 0.3); }
 
-/* زر التحميل الأخضر (الرئيسي) */
-.btn-main-excel {
-    background: #1d6f42 !important;
-    color: white;
-    width: 100%;
-    padding: 15px;
-    border-radius: 10px;
-    font-weight: bold;
-    border: none;
-    cursor: pointer;
+/* المودال والقائمة */
+.modal-overlay {
+    display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0,0,0,0.85); z-index: 1000; align-items: center; justify-content: center;
+    backdrop-filter: blur(5px);
 }
+.modal-content { background: white; padding: 25px; border-radius: 20px; width: 90%; max-width: 450px; animation: modalIn 0.4s ease; }
+@keyframes modalIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
 
-.btn-main-excel:hover {
-    background: #145a32 !important; /* لون أغمق */
-    transform: translateY(-3px); /* يرتفع */
-    box-shadow: 0 5px 15px rgba(29, 111, 66, 0.3);
-}
+.teachers-list-container { max-height: 320px; overflow-y: auto; border: 1px solid #ddd; border-radius: 10px; padding: 10px; margin: 15px 0; background: #fafafa; }
+.subject-group { background: #f2c6d4; color: #a12c4a; padding: 8px; font-weight: bold; margin-top: 15px; border-radius: 5px; }
+.teacher-item { display: block; padding: 12px; border-bottom: 1px solid #eee; cursor: pointer; transition: 0.2s; }
+.teacher-item:hover { background: #fff0f5; }
 
-.btn-main-excel:active {
-    transform: translateY(-1px); /* ينضغط */
-}
-
-/* الزر العائم (+) */
-.final-plus-btn:hover {
-    transform: scale(1.1) rotate(90deg); /* يكبر ويدور */
-    background: #82223a; /* لون أغمق */
-}
-
-/* الحقول (Inputs & Textarea) */
-input[type="text"], input[type="email"], input[type="password"], textarea {
-    width: 100%;
-    padding: 12px;
-    margin-top: 5px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    box-sizing: border-box;
-}
-
-input:focus, textarea:focus {
-    border-color: #a12c4a;
-    outline: none;
-    box-shadow: 0 0 8px rgba(161,44,74,0.1);
-    background-color: white;
-}
-
-/* الأزرار العامة */
-button {
-    background: #a12c4a;
-    color: white;
-    border: none;
-    padding: 15px;
-    border-radius: 10px;
-    font-weight: bold;
-    cursor: pointer;
-}
-
-button:hover {
-    filter: brightness(1.1);
-    transform: translateY(-2px);
-}
-
-button:active {
-    transform: scale(0.98);
-}
-
-/* ألوان الأزرار الخاصة */
+/* أزرار وحقول النموذج */
+input, textarea { width: 100%; padding: 12px; margin-top: 5px; border: 1px solid #ddd; border-radius: 8px; transition: 0.3s; box-sizing: border-box; }
+input:focus { border-color: #a12c4a; outline: none; box-shadow: 0 0 8px rgba(161,44,74,0.1); }
+button { background: #a12c4a; color: white; border: none; padding: 15px; border-radius: 10px; font-weight: bold; cursor: pointer; transition: 0.3s; }
+button:hover { filter: brightness(1.1); transform: translateY(-2px); }
 .btn-success { background: #27ae60; }
-.btn-success:hover { background: #219150; }
-
-.btn-danger { background: #c0392b; }
-.btn-danger:hover { background: #a93226; }
-
 .btn-secondary { background: #95a5a6; width: 100%; }
-.btn-secondary:hover { background: #7f8c8d; }
+.modal-btns { display: grid; grid-template-columns: 2fr 1fr; gap: 10px; margin-top: 15px; }
 
+footer { background: #f2c6d4; padding: 20px; text-align: center; }
 
 /* ============================================================
-   3. تنسيقات الهواتف (Responsive Fix)
+   3. الحل الجذري للهواتف (Responsive Fix)
    ============================================================ */
 @media screen and (max-width: 600px) {
-  
-  /* رأس الصفحة في الهاتف */
-  .top {
-    padding: 15px 10px;
-    display: flex;
-    flex-direction: column; /* رص عمودي */
-    align-items: center; /* توسيط */
-  }
+    /* ترتيب العناصر عمودياً لمنع التداخل */
+    .top {
+        flex-direction: column; 
+        padding: 15px 10px;
+        min-height: auto;
+    }
 
-  /* جعل العداد التنازلي فوق اسم المؤسسة وبشكل منظم */
-  .bem-countdown-box {
-    position: relative; /* ليس absolute */
-    left: auto;
-    top: auto;
-    transform: none; /* إلغاء التحويل الافتراضي */
-    margin-bottom: 15px; /* مسافة قبل الشعار */
-    width: auto;
-    max-width: 95%;
-    background: rgba(161, 44, 74, 0.1); /* خلفية خفيفة للتحديد */
-    border: 1px solid rgba(161, 44, 74, 0.2);
-  }
+    /* العداد يظهر أولاً في الأعلى بوضوح */
+    .bem-countdown-box {
+        position: static; /* يتحول لعنصر عادي ليأخذ مكانه الطبيعي */
+        transform: none;
+        margin-bottom: 20px; /* مسافة واضحة بين العداد والاسم */
+        width: fit-content;
+    }
 
-  /* تصغير نصوص العداد لتناسب الشاشة الصغيرة */
-  .cd-label { font-size: 11px; }
-  .t-unit { padding: 3px; min-width: 30px; }
-  .t-unit span { font-size: 14px; }
+    /* الاسم يظهر تحت العداد مباشرة */
+    .logo {
+        position: static;
+    }
 
-  /* ضبط منطقة الشعار */
-  .logo { margin-top: 0; }
-  .logo-svg { width: 50px; height: 50px; }
+    .school h1 { font-size: 19px; }
+    .school span { font-size: 12px; }
 
-  /* تصغير العناوين */
-  .school h1 { font-size: 18px; }
-  .school span { font-size: 12px; }
-
-  /* ضبط منطقة المحتوى */
-  .container { margin: 15px auto; padding: 0 10px; }
-  .card { padding: 15px; }
-
-  /* تعديل وضعية زر (+) في الهاتف */
-  .final-promo-box { padding-top: 50px !important; }
-  .final-plus-btn { top: -75px; right: 10px; width: 45px; height: 45px; font-size: 26px; }
-  .final-arrow-down { top: -35px; right: 18px; }
+    /* تعديل وضعية الأزرار في الكارد لتناسب الهاتف */
+    .final-plus-btn { top: -75px; right: 10px; width: 45px; height: 45px; font-size: 26px; }
+    .final-arrow-down { top: -35px; right: 18px; }
+    
+    .container { margin: 15px auto; }
 }
