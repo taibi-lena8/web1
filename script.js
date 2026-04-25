@@ -1,5 +1,29 @@
 (function() { emailjs.init("rI-X_67czvTjPDZjh"); })();
 
+// --- محرك العداد التنازلي لشهادة التعليم المتوسط 2026 ---
+function startBEMCountdown() {
+    const examDate = new Date("June 1, 2026 08:00:00").getTime();
+    
+    setInterval(() => {
+        const now = new Date().getTime();
+        const difference = examDate - now;
+
+        if (difference > 0) {
+            const d = Math.floor(difference / (1000 * 60 * 60 * 24));
+            const h = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const m = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+            const s = Math.floor((difference % (1000 * 60)) / 1000);
+
+            document.getElementById("days").innerText = d;
+            document.getElementById("hours").innerText = h;
+            document.getElementById("minutes").innerText = m;
+            document.getElementById("seconds").innerText = s;
+        }
+    }, 1000);
+}
+startBEMCountdown();
+
+// --- وظائف الموقع الأصلية ---
 const modal = document.getElementById('excel-modal');
 document.getElementById('open-excel-portal').onclick = () => { modal.style.display = 'flex'; };
 document.getElementById('plus-btn-access').onclick = () => { modal.style.display = 'flex'; };
@@ -23,7 +47,6 @@ function doDownload() {
     }
 }
 
-// برمجة نموذج الاتصال
 document.getElementById("contact-form").onsubmit = function(e) {
     e.preventDefault();
     const btn = document.getElementById("contact-btn");
